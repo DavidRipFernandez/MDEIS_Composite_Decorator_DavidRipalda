@@ -1,0 +1,14 @@
+# Ignore Visual Studio caches
+.vs/
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+
+# User settings
+*.user
+*.suo
+
+# IDE folders
+.idea/
+.vscode/
