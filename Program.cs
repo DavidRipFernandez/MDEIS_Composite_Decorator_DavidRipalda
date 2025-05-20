@@ -3,6 +3,8 @@
 
 using EjercicioKataIndividual.KataComposite.Kata1Archivos;
 using EjercicioKataIndividual.KataComposite.Kata3Organizacion;
+using EjercicioKataIndividual.KataDecorador.Kata2Notificaciones;
+using EjercicioKataIndividual.KataDecorador.Kata4FiltroImagenes;
 
 namespace EjercicioKataIndividual
 {
@@ -36,6 +38,25 @@ namespace EjercicioKataIndividual
             //jane.ShowDetails();
             alice.ShowDetails();
 
+            Console.WriteLine("EJERCICIO KATA 2 - NOTIFICACIONES DE USUARIO - PATRON DECORADOR");
+
+            Notificacion notificacion = new BasicNotificacion();
+
+            // Añadir decoradores (ejemplo: correo y SMS)
+            notificacion = new EmailNotification(notificacion);
+            notificacion = new SMSNotification(notificacion);
+
+            notificacion.Send();
+
+            Console.WriteLine("EJERCICIO KATA 4 - NOTIFICACIONES DE USUARIO - PATRON DECORADOR");
+
+            // Aplica los filtros: blanco y negro, luego brillo, luego contraste
+            Image imagen = new BasicImage();
+            imagen = new BlackAndWhiteFilter(imagen);
+            imagen = new BrightnessFilter(imagen);
+            imagen = new ContrastFilter(imagen);
+
+            imagen.ApplyFilters();
 
         }
     }
